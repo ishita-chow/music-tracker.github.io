@@ -62,7 +62,7 @@
 
     <header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
       <div class="w3-display-left w3-text-white" style="padding:48px">
-	<span class="w3-jumbo w3-hide-small">Don't feel like waiting for your Spotify Wrapped?</span><br>
+	<span class="w3-jumbo w3-hide-small"></span><br>
 	<span class="w3-large">Don't feel like waiting for your Spotify Wrapped?</span>
 	 <span class="w3-large">Check out Music Tracker for your up-to-date music streams!</span>
 	<p><a href="#about" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Learn more and start today!</a></p>
@@ -75,9 +75,6 @@
     </header>
 
     	
-	<!-- home  sec-->
-	<header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
-
 	  <!-- about sec -->
 	  <div class="w3-container" style="padding:128px 16px" id="about">
 	    <h3 class="w3-center">ABOUT MUSIC TRACKER</h3>
@@ -85,34 +82,49 @@
 	    <div class="w3-row-padding w3-center" style="margin-top:64px">
 	      <div class="w3-quarter">
 
-		<i class="fas fa-music w3-margin-bottom w3-jumbo w3-center"></i>
+		<i class="fa fa-music w3-margin-bottom w3-jumbo w3-center"></i>
 		<p class="w3-large">TOP TRACKS AND ARTISTS</p>
 		<p>Check which tracks and artists you streamed the most!</p>
 	      </div>
 	      <div class="w3-quarter">
-		<i class="fas fa-headphones w3-margin-bottom w3-jumbo"></i>
+		<i class="fa fa-headphones w3-margin-bottom w3-jumbo"></i>
 		<p class="w3-large">LISTENING HISTORY</p>
 		<p>See how often you've streamed tracks  with interactive graphs!</p>
 	      </div>
 	      <div class="w3-quarter">
-		<i class="fas fa-user-lock w3-margin-bottom w3-jumbo"></i>
+		<i class="fa fa-user-lock w3-margin-bottom w3-jumbo"></i>
 		<p class="w3-large">PRIVACY</p>
 		<p>A single login through the last.fm unlocks all the features to you!</p>
 	      </div>
 	      <div class="w3-quarter">
-		<i class="fas fa-calendar-alt w3-margin-bottom w3-jumbo"></i>
+		<i class="fa fa-calendar-alt w3-margin-bottom w3-jumbo"></i>
 		<p class="w3-large">TIME RANGES</p>
 		<p>All stats in the app can be checked up to weeks, months, and even years!</p>
 	      </div>
 	    </div>
 	  </div>
 	  
-	      
-	      
+	    
 
-	    <!-- profile sec -->
-	    <div class="w3-container" style="padding:128px 16px" id="profile">
-	      <h3 class="w3-center">LOG IN</h3>
+	    <!-- log in/sign up sec -->
+	  <div class="w3-container w3-center w3-dark-grey" style="padding:128px 16px" id="logIn">
+	    <h3>CREATE ACCOUNT</h3>
+	    <p class="w3-large">Get started now!</p>
+	      <div class="w3-row-padding" style="margin-top:64px">
+		<div class="w3-half w3-section">
+		  <br>
+		  <form action="/action_page.php" target="_blank">
+		    <p><input class="w3-input w3-border" type="text" placeholder="Email" required name="Email"></p>
+		    <p><input class="w3-input w3-border" type="text" placeholder="Password" required name="Password"></p>
+		    <p><input class="w3-input w3-border" type="text" placeholder="Confirm Password" required name="Confirm Password"></p>
+		    <p>
+		      <button class="w3-button w3-black" type="submit">
+			<i class="fa fa-paper-plane"></i> SIGN UP
+		      </button>
+		    </p>
+		        </form>
 
+
+	    
 	      <!-- contact sec --> 
 	       <a href="#contact" class="w3-bar-item w3-button"> CONTACT</a>

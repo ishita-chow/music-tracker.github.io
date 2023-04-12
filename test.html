@@ -1,0 +1,94 @@
+<html>
+    <body>
+        <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.4"></script>
+        <style>
+            .graph {
+              padding-top: 80px;
+              padding-bottom: 80px;
+            }
+            .head-section {
+              font:  bold italic 18px Georgia,'Times New Roman',serif;
+            }
+            .contents {
+              font-style: italic;
+            }
+            </style>
+        <div id="graphone" class="graph"></div>
+            <script>
+                const dataDownloaded = new Event('dataDownloaded', {bubbles: true});
+
+                async function g() {
+                    const res = await fetch(`https://raw.githubusercontent.com/llimllib/nbastats/cb9551776bcfdce57177d2e569da0e1d70f58890/playoff/data.json`);
+                    const data = [
+                        {date: new Date("2010-10-01"), high: 59.5, low: 57},
+                        {date: new Date("2010-10-02"), high: 59.5, low: 53.4},
+                        {date: new Date("2010-10-03"), high: 59, low: 53.4},
+                        {date: new Date("2010-10-04"), high: 59.4, low: 54.7},
+                        {date: new Date("2010-10-05"), high: 58.3, low: 52.7},
+                        {date: new Date("2010-10-06"), high: 62.1, low: 54.5},
+                        {date: new Date("2010-10-07"), high: 60.8, low: 53.4},
+                        {date: new Date("2010-10-08"), high: 61, low: 52.5},
+                        {date: new Date("2010-10-09"), high: 62.4, low: 52.9},
+                        {date: new Date("2010-10-10"), high: 65.3, low: 54},
+                        {date: new Date("2010-10-11"), high: 70.3, low: 55},
+                        {date: new Date("2010-10-12"), high: 82.2, low: 58.6},
+                        {date: new Date("2010-10-13"), high: 75.6, low: 57.4},
+                        {date: new Date("2010-10-14"), high: 75.7, low: 57.7},
+                        {date: new Date("2010-10-15"), high: 68.4, low: 54.7},
+                        {date: new Date("2010-10-16"), high: 56.3, low: 52.7},
+                        {date: new Date("2010-10-17"), high: 54.3, low: 51.8},
+                        {date: new Date("2010-10-18"), high: 54.9, low: 51.4},
+                        {date: new Date("2010-10-19"), high: 54.7, low: 50.2},
+                        {date: new Date("2010-10-20"), high: 56.5, low: 50},
+                        {date: new Date("2010-10-21"), high: 62.6, low: 55.4},
+                        {date: new Date("2010-10-22"), high: 59.9, low: 53.8},
+                        {date: new Date("2010-10-23"), high: 62.2, low: 52.2},
+                        {date: new Date("2010-10-24"), high: 63, low: 57.9},
+                        {date: new Date("2010-10-25"), high: 58.5, low: 54.3},
+                        {date: new Date("2010-10-26"), high: 59.5, low: 51.3},
+                        {date: new Date("2010-10-27"), high: 59.4, low: 49.8},
+                        {date: new Date("2010-10-28"), high: 66.6, low: 55.8},
+                        {date: new Date("2010-10-29"), high: 64.9, low: 53.2},
+                        {date: new Date("2010-10-30"), high: 59.9, low: 52.3},
+                        {date: new Date("2010-10-31"), high: 60.4, low: 53.2}];
+                    const stats = await res.json();
+                    window.stats = stats; // let's not re-download it. Save it as a global
+                    window.data = data;
+                    document.dispatchEvent(dataDownloaded);
+                    const dotplot = Plot.dot(stats, {
+                        x: "usg_pct",
+                        y: "ts_pct",
+                        stroke: "team",
+                        title: "name",
+                    }).plot();
+                    const linemark = Plot.plot({
+                        grid: true,
+                        x: {
+                            domain: [new Date("2010-10-01"), new Date("2010-10-31")],
+                            type: "time",
+                            label: "Months",
+                            grid: true
+                        },
+                        y: {
+                            grid: true,
+                            label: "↑ Temperature (°F)"
+                            //range: [50,90]
+                        },
+                        marks: [
+                            //Plot.axisX({anchor: "bottom", ticks: 30, tickSize: 1}),
+                            //no idea why this doesn't work?
+                            Plot.line(data, {sort: "date", x: "date", y: "low", stroke: "#4e79a7"}),
+                            Plot.line(data, {sort: "date", x: "date", y: "high", stroke: "#e15759"}),
+                            Plot.ruleY([32]) // freezing
+                        ]
+                    })
+                    document.body.append(dotplot);
+                    document.body.append(linemark);
+                }
+                window.addEventListener("DOMContentLoaded", async (_evt) => {
+                    await g();
+                });
+            </script>
+    </body>
+</html>

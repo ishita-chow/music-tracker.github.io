@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body {
+
+    font-family: 'Rubik', sans-serif;
+    line-height: 1.5;
+    font-size: 1.5rem;
+    font-weight: 400;
+    overflow-x: hidden;
+    color: #FFFFFF;
+    background-color: #201949;
+}
+
+
+     

@@ -22,4 +22,75 @@ body {
 }
 
 
-     
+.heading-primary,
+.heading-secondary,
+.heading-tertiary, {
+    font-weight: 700;
+    color: #FFFFFF;
+    letter-spacing: -0.5px;
+}
+
+.heading-primary {
+    font-size: 6rem;
+    line-height: 1.05;
+    margin-bottom: 3.2rem;
+}
+
+.heading-secondary {
+    font-size: 4.4rem;
+    line-height: 1.2;
+    margin-bottom: 5.6rem;
+    text-align: center;
+}
+
+.heading-tertiary {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin: 1.2rem;
+}
+
+.first-fold {
+    background-image: url(img/computerColors.png);
+    min-height: 80rem;
+}
+
+/*css flex-box for logo and navigation bar*/
+
+.header {
+    
+		      
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    height: 9.6rem;
+    padding: 0 4.8rem;
+}
+
+.logo {
+    height: 2.2rem;
+    font-size: 3.6rem;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    color: #FFFFFF;
+
+}
+
+/* Navigation */
+
+.main-nav-list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 4.8rem;
+}
+
+.main-nav-link {
+    display: inline-block;
+    text-decoration: none;
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 1.8rem;
+}
+

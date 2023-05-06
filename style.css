@@ -5,6 +5,7 @@
 }
 
 html {
+/* 10px / 16px = 0.625 =62.5*/
     font-size: 62.5%;
     overflow-x: hidden;
     scroll-behavior: smooth;
@@ -49,8 +50,12 @@ body {
     margin: 1.2rem;
 }
 
+a {
+    text-decoration: none;
+}
+
 .first-fold {
-    background-image: url(img/computerColors.png);
+    background-image: url(computerColors.png);
     min-height: 80rem;
 }
 
@@ -94,3 +99,32 @@ body {
     font-size: 1.8rem;
 }
 
+
+.main-nav-link.nav-cta {
+    padding: 1.2rem 2.4rem;
+    border-radius: 9px;
+    color: #FFFFFF;
+    background-color: #523414;
+
+}
+
+/* Hero Section */
+
+.section-hero {
+    padding: 15rem 0 9.6rem;
+}
+
+.hero {
+    max-width: 75rem;
+    padding: 0 9.6rem;
+    align-items: left;
+}
+
+.hero-description {
+    font-size: 2rem;
+    line-height: 1.6;
+    margin: 4.8rem 0;
+}
+    
+
+    

@@ -20,6 +20,7 @@
 
                 async function g() {
                     const res = await fetch(`https://raw.githubusercontent.com/llimllib/nbastats/cb9551776bcfdce57177d2e569da0e1d70f58890/playoff/data.json`);
+		    const json = await fetch(`./topTracks.json`);
                     const data = [
                         {date: new Date("2010-10-01"), high: 59.5, low: 57},
                         {date: new Date("2010-10-02"), high: 59.5, low: 53.4},
@@ -67,9 +68,11 @@
                     ]
 
                     const stats = await res.json();
+		    const topTracks = await json.json();
                     window.stats = stats; // let's not re-download it. Save it as a global
                     window.data = data;
                     window.song1 = song1;
+		    window.topTracks = topTracks;
                     document.dispatchEvent(dataDownloaded);
                     const dotplot = Plot.dot(stats, {
                         x: "usg_pct",
@@ -110,7 +113,7 @@
                             label: "rank"
                         }, 
                         marks: [
-                            Plot.line(song1, {sort: "date", x: "to", y: "rank"})
+                            Plot.line(topTracks, {sort: "date", x: "/data/date", y: "/data/rank"})
                         ] 
                     })
                     document.body.append(dotplot);

@@ -55,7 +55,11 @@ a {
 }
 
 .first-fold {
-    background-image: url(computerColors.png);
+    background-image: url(computerColors.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     min-height: 80rem;
 }
 

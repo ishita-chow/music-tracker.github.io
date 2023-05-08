@@ -18,8 +18,8 @@ body {
     font-size: 1.5rem;
     font-weight: 400;
     overflow-x: hidden;
-    color: #523414;
-    background-color: #e9be5a;
+    color: #ffffff;
+    background-color: #0B0723;
 }
 
 
@@ -27,7 +27,7 @@ body {
 .heading-secondary,
 .heading-tertiary, {
     font-weight: 700;
-    color: #523414;
+    color: #ffffff;
     letter-spacing: -0.5px;
 }
 
@@ -81,7 +81,7 @@ a {
     text-decoration: none;
     text-align: center;
     font-weight: bold;
-    color: #462d12;
+    color: #ffffff;
 
 }
 
@@ -97,7 +97,7 @@ a {
 .main-nav-link {
     display: inline-block;
     text-decoration: none;
-    color:#462d12;
+    color:#ffffff;
     font-weight: 400;
     font-size: 1.8rem;
 }
@@ -107,7 +107,7 @@ a {
     padding: 1.2rem 2.4rem;
     border-radius: 9px;
     color: #fff;
-    background-color: #523414;
+    background-color: #0B0723;
 
 }
 
@@ -131,3 +131,26 @@ a {
     
 
     
+.our-services {
+    padding: 9.6rem 0;
+}
+
+
+.container {
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 1.5rem 3.2rem;
+}
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.services img {
+    width: 80%;
+    border-radius: 9px;
+}
+

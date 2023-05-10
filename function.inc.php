@@ -13,7 +13,7 @@ return $result;
     
 function invalidUid($username) {
     $result;
-    if (!preg_match("/^[a-zA-Z0-9]*$/"), $username) {
+    if (!preg_match("/^[a-zA-Z0-9]*$/", $username)) {
         $result = true;
 }
 else {
@@ -35,7 +35,7 @@ function invalidEmail($email) {
 
 function pwdMatch($pwd, $pwdRepeat) {
     $result;
-    if ($pwd !== $pwdRepeat)) {
+    if ($pwd !== $pwdRepeat) {
     $result = true;
 }
 else {
@@ -57,7 +57,7 @@ function uidExists($conn, $username, $email) {
     $resultData = mysqli_stmt_get_result($stmt);
 
     if($row = mysqli_fetch_assoc($resultData)) {
-        return $row
+        return $row;
 }
     else {
         $result = false;
